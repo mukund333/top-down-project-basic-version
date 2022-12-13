@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class AimJoystick : Joystick
 {
-   
+   //this class inherited
 }
