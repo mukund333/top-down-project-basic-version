@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class PlayerFaceDirection : MonoBehaviour
 {
-   // event based code
-
-   [SerializeField] private AimDirection aimDirection = AimDirection.Right;
-
-    [SerializeField] private int FacingDirection = 1;
+    public AimDirection faceDirection;
 
     private void Update()
     {
-
-        if (aimDirection == AimDirection.Right)
-        {
-            FacingDirection = 1;
-        }
-        else if (aimDirection == AimDirection.Left)
-        {
-            FacingDirection = -1;
-        }
-
-        Flip();
+        FlipPlayerSprite(faceDirection);
     }
 
-    protected void Flip()
-    {     
-        Vector3 theScale = transform.localScale;
-        theScale.x = FacingDirection;
-        transform.localScale = theScale;
+    //Flip player sprite transform based on player direction
+
+    private void FlipPlayerSprite(AimDirection aimDirection)
+    {
+        switch (aimDirection)
+        {
+            case AimDirection.Right:
+
+                
+                transform.localScale = new Vector3(1f, 1f, 0f);
+
+                break;
+            case AimDirection.Left:
+
+                
+                transform.localScale = new Vector3(-1f, 1f, 0f);
+
+                break;
+        }
     }
 }

@@ -34,7 +34,8 @@ public abstract class AimMechanicsWithMouseBase : AimMechanicsBase
     {
         Vector3 mouseWolrdPosition = GetMouseWolrdPosition();
 
-        Vector3 weaponDirection = (mouseWolrdPosition - weaponRotationPointTransform.position).normalized;
+        //  Vector3 weaponDirection = (mouseWolrdPosition - weaponRotationPointTransform.position).normalized;
+        Vector3 weaponDirection = (mouseWolrdPosition - transform.position).normalized;
 
         return weaponDirection;
     }

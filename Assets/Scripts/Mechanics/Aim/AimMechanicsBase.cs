@@ -6,7 +6,7 @@ public abstract class AimMechanicsBase : MonoBehaviour
 {
    
 
-    [SerializeField] protected Transform weaponRotationPointTransform;
+   // [SerializeField] protected Transform weaponRotationPointTransform;
 
     [SerializeField] protected AimDirection weaponAimDirection = AimDirection.Right;
 
@@ -15,7 +15,7 @@ public abstract class AimMechanicsBase : MonoBehaviour
 
     protected virtual void Awake()
     {
-        weaponRotationPointTransform = GameObject.Find("Aim").transform;
+       // weaponRotationPointTransform = GameObject.Find("Aim").transform;
         spriteRenderer = GameObject.Find("Weapon").GetComponent<SpriteRenderer>();
         
        
@@ -36,12 +36,13 @@ public abstract class AimMechanicsBase : MonoBehaviour
     {
         AimDirection aimDirection = AimDirection.Right;
 
-        
-         if(angleDegrees < -90f )
+
+        if (angleDegrees < -90f)
         {
             aimDirection = AimDirection.Left;
 
-        }else if(angleDegrees > 90f)
+        }
+        else if (angleDegrees > 90f)
         {
             aimDirection = AimDirection.Left;
         }
@@ -57,7 +58,8 @@ public abstract class AimMechanicsBase : MonoBehaviour
 
     protected void SetWeaponAngle(float aimAngle)
     {
-        weaponRotationPointTransform.eulerAngles = new Vector3(0f, 0f, aimAngle);
+       // weaponRotationPointTransform.eulerAngles = new Vector3(0f, 0f, aimAngle);
+        transform.eulerAngles = new Vector3(0f, 0f, aimAngle);
     }
 
     //Aim the Weapon
@@ -70,12 +72,14 @@ public abstract class AimMechanicsBase : MonoBehaviour
         {
             case AimDirection.Right:
 
-                weaponRotationPointTransform.localScale = new Vector3(1f,1f,0f);
+                //  weaponRotationPointTransform.localScale = new Vector3(1f,1f,0f);
+                transform.localScale = new Vector3(1f, 1f, 0f);
 
                 break;
             case AimDirection.Left:
 
-                weaponRotationPointTransform.localScale = new Vector3(1f, -1f, 0f);
+                //weaponRotationPointTransform.localScale = new Vector3(1f, -1f, 0f);
+                transform.localScale = new Vector3(1f, -1f, 0f);
 
                 break;
         }

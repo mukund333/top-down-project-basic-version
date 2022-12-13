@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AimMechanicsWithJoystickSimple : AimMechanicsWithJoystickBase
 {
-   
+    [SerializeField] private CurrentAimDirection currentAimDirection;
+
     protected override void Awake()
     {
         base.Awake();
+        currentAimDirection = GetComponent<CurrentAimDirection>();
     }
 
     private void Update()
@@ -21,6 +23,8 @@ public class AimMechanicsWithJoystickSimple : AimMechanicsWithJoystickBase
         Vector3 weaponDirection = GetWeaponDirection();
 
         float weaponAngleDegrees = GetAngleFromVector(weaponDirection);
+
+        currentAimDirection.SetAimDirection(weaponAngleDegrees);
 
         SetWeaponAngle(weaponAngleDegrees);
 

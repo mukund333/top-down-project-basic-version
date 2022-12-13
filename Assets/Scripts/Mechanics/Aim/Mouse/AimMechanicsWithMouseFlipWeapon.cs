@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class AimMechanicsWithMouseFlipWeapon : AimMechanicsWithMouseBase
 {
-    protected override void Awake()
+    [SerializeField] private CurrentAimDirection currentAimDirection;
+    [SerializeField] private FlipWeaponTransform flipWeaponTransform;
+
+
+   protected override void Awake()
     {
         base.Awake();
+        currentAimDirection = GetComponent<CurrentAimDirection>();
+        flipWeaponTransform = GetComponent<FlipWeaponTransform>();
+
+
     }
 
     protected void HandleMosueAiming()
@@ -15,15 +23,15 @@ public class AimMechanicsWithMouseFlipWeapon : AimMechanicsWithMouseBase
 
         float weaponAngleDegrees = GetAngleFromVector(weaponDirection);
 
-        weaponAimDirection = GetAimDirection(weaponAngleDegrees);
+        currentAimDirection.SetAimDirection(weaponAngleDegrees);
+
+        flipWeaponTransform.FlipWeapon(currentAimDirection.GetAimDirection());
 
         SetWeaponAngle(weaponAngleDegrees);
-
-        FlipWeaponTransform(weaponAimDirection);
-
+        
         WeaponSortingOrder(weaponAngleDegrees);
 
-        WeaponSortingOrder(weaponAngleDegrees);
+
     }
 
     private void Update()

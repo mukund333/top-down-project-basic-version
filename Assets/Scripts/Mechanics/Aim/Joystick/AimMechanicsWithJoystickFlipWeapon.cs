@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class AimMechanicsWithJoystickFlipWeapon : AimMechanicsWithJoystickBase
 {
+    [SerializeField] private CurrentAimDirection currentAimDirection;
+    [SerializeField] private FlipWeaponTransform flipWeaponTransform;
     protected override void Awake()
     {
         base.Awake();
-    }
-
-    private void Update()
-    {
-        HandlingAim();
-
+        currentAimDirection = GetComponent<CurrentAimDirection>();
+        flipWeaponTransform = GetComponent<FlipWeaponTransform>();
     }
 
     private void HandlingAim()
@@ -21,12 +19,20 @@ public class AimMechanicsWithJoystickFlipWeapon : AimMechanicsWithJoystickBase
 
         float weaponAngleDegrees = GetAngleFromVector(weaponDirection);
 
-        weaponAimDirection = GetAimDirection(weaponAngleDegrees);
+        currentAimDirection.SetAimDirection(weaponAngleDegrees);
+
+        flipWeaponTransform.FlipWeapon(currentAimDirection.GetAimDirection());
 
         SetWeaponAngle(weaponAngleDegrees);
-
-        FlipWeaponTransform(weaponAimDirection);
-
+        
         WeaponSortingOrder(weaponAngleDegrees);
     }
+
+
+    private void Update()
+    {
+        HandlingAim();
+
+    }
+
 }

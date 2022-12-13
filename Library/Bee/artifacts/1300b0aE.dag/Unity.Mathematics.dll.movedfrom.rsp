@@ -48,7 +48,6 @@ Library\Bee\artifacts\movedfrom\UnityEngine.SpriteMaskModule.dll_585429939337833
 Library\Bee\artifacts\movedfrom\UnityEngine.SpriteShapeModule.dll_10339480619180143363.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.StreamingModule.dll_1918757066646425513.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.SubstanceModule.dll_17819582281036991927.movedfrom
-Library\Bee\artifacts\movedfrom\UnityEngine.SubsystemsModule.dll_13541212102628320545.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.TerrainModule.dll_8731808821545189372.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.TerrainPhysicsModule.dll_7034730936841814671.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.TextCoreModule.dll_18243496769968712841.movedfrom
@@ -72,9 +71,7 @@ Library\Bee\artifacts\movedfrom\UnityEngine.UnityWebRequestWWWModule.dll_1345949
 Library\Bee\artifacts\movedfrom\UnityEngine.VehiclesModule.dll_15867889288291290132.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.VFXModule.dll_8533137273039535567.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.VideoModule.dll_6809846766184055362.movedfrom
-Library\Bee\artifacts\movedfrom\UnityEngine.VRModule.dll_12600175268914121097.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.WindModule.dll_11431243415530075589.movedfrom
-Library\Bee\artifacts\movedfrom\UnityEngine.XRModule.dll_16256749640635127527.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.Android.Extensions.dll_7462708998242645113.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.UWP.Extensions.dll_7712183649399213258.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.WindowsStandalone.Extensions.dll_17892311198721102207.movedfrom

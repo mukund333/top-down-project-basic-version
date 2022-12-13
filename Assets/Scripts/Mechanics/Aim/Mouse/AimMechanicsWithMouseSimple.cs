@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AimMechanicsWithMouseSimple : AimMechanicsWithMouseBase
 {
-   
+    [SerializeField] private CurrentAimDirection currentAimDirection;
 
     protected override void Awake()
     {
         base.Awake();
-       
+        currentAimDirection = GetComponent<CurrentAimDirection>();
+
     }
 
     private void HandleMosueAiming()
@@ -17,6 +18,8 @@ public class AimMechanicsWithMouseSimple : AimMechanicsWithMouseBase
         Vector3 weaponDirection = GetWeaponDirection();
 
         float weaponAngleDegrees = GetAngleFromVector(weaponDirection);
+
+        currentAimDirection.SetAimDirection(weaponAngleDegrees);
 
         SetWeaponAngle(weaponAngleDegrees);
 
