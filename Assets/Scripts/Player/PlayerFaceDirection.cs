@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class PlayerFaceDirection : MonoBehaviour
 {
-    public AimDirection faceDirection;
+    [SerializeField] private CurrentAimDirection currentAimDirection;
+
+    private void Awake()
+    {
+        currentAimDirection = GameObject.Find("Aim").GetComponent<CurrentAimDirection>();
+    }
 
     private void Update()
     {
-        FlipPlayerSprite(faceDirection);
+        FlipPlayerSprite(currentAimDirection.GetAimDirection());
     }
 
     //Flip player sprite transform based on player direction
@@ -20,13 +25,13 @@ public class PlayerFaceDirection : MonoBehaviour
             case AimDirection.Right:
 
                 
-                transform.localScale = new Vector3(1f, 1f, 0f);
+                transform.localScale = new Vector3(-1f, 1f, 0f);
 
                 break;
             case AimDirection.Left:
 
                 
-                transform.localScale = new Vector3(-1f, 1f, 0f);
+                transform.localScale = new Vector3(1f, 1f, 0f);
 
                 break;
         }

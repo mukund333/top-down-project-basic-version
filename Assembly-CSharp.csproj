@@ -65,7 +65,7 @@
     <Compile Include="Assets\Scripts\Mechanics\Aim\FlipWeaponTransform.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseSimple.cs" />
     <Compile Include="Assets\Scripts\Enums\Enums.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovementController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovementKeyboardController.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Joystick\AimMechanicsWithJoystickSimple.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseFlipWeapon.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AngleFromVector.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\CurrentAimDirection.cs" />
+    <Compile Include="Assets\Scripts\Player\Dash.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -294,6 +295,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.7f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+      <HintPath>Library\PackageCache\com.unity.cinemachine@2.7.9\Runtime\ThirdParty\clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.7f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -648,6 +652,12 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>

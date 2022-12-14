@@ -112,6 +112,7 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"C:/My drive/Unity Projects/top down project basic version/Library/PackageCache/com.unity.cinemachine@2.7.9/Runtime/ThirdParty/clipper_library.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
@@ -298,6 +299,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Animation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Animation.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Animation.Triangle.Runtime.ref.dll"
@@ -338,10 +341,11 @@
 "Assets/Scripts/Mechanics/Aim/Mouse/AimMechanicsWithMouseFlipWeapon.cs"
 "Assets/Scripts/Mechanics/Aim/Mouse/AimMechanicsWithMouseSimple.cs"
 "Assets/Scripts/Mechanics/AngleFromVector.cs"
+"Assets/Scripts/Player/Dash.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerFaceDirection.cs"
-"Assets/Scripts/Player/PlayerMovementController.cs"
 "Assets/Scripts/Player/PlayerMovementJoystickController.cs"
+"Assets/Scripts/Player/PlayerMovementKeyboardController.cs"
 -langversion:8.0
 
 /deterministic
