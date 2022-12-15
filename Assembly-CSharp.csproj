@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseSimple.cs" />
     <Compile Include="Assets\Scripts\Enums\Enums.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovementKeyboardController.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Joystick\AimMechanicsWithJoystickSimple.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseFlipWeapon.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AngleFromVector.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\CurrentAimDirection.cs" />
+    <Compile Include="Assets\Scripts\GameHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
