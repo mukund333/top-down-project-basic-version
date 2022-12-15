@@ -76,7 +76,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerFaceDirection.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Joystick\AimMechanicsWithJoystickBase.cs" />
-    <Compile Include="Assets\Scripts\Player\Dash.cs" />
+    <Compile Include="Assets\Scripts\Player\Teleport.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\AimMechanicsBase.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseFlipWeapon.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AngleFromVector.cs" />

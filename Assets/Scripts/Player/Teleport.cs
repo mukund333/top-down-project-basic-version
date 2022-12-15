@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dash : MonoBehaviour
+public class Teleport : MonoBehaviour
 {
 
     [SerializeField] private float dashDistance = 100f;
     [SerializeField] private PlayerMovementKeyboardController keyboardController;
     [SerializeField] private Vector3 moveDirection;
-   
+    [SerializeField] private float shortDistance = 0f;
     private void Awake()
     {
         keyboardController = GetComponent<PlayerMovementKeyboardController>();
     }
 
-   
-
-
+  
     private bool CanMove(Vector3 dir, float distance)
     {
         bool isMove = true;
@@ -37,7 +35,7 @@ public class Dash : MonoBehaviour
         if (hit.collider != null)
         {
             isMove = false;
-            
+            shortDistance = hit.distance;
             //Hit something, print the tag of the object
             Debug.Log("Hitting: " + hit.collider.tag);
             Debug.DrawRay(transform.position, dir * distance, Color.red);
@@ -55,8 +53,6 @@ public class Dash : MonoBehaviour
         Debug.Log(isMove);
         return isMove;
     }
-
-   
 
     private void Update()
     {
@@ -86,42 +82,78 @@ public class Dash : MonoBehaviour
 
     private bool TryMove(Vector3 baseMoveDir, float distance)
     {
+        //Check Diagonally movement
         Vector3 moveDir = baseMoveDir;
-
         bool canMoveable = CanMove(moveDir, distance);
-      //  Debug.Log(canMoveable);
+       
         if (!canMoveable)
         {
-            // Cannot move diagonally
+            // Cannot move diagonally check x and y 
+
+
+            //Check X axis movement
+           
+
             moveDir = new Vector3(baseMoveDir.x, 0f).normalized;
             canMoveable = moveDir.x != 0 && CanMove(moveDir, distance);
+
+
+            if(!canMoveable && baseMoveDir.x != 0 && baseMoveDir.y == 0f)
+            {
+                shortDistance -= 0.2f;
+                keyboardController.lastMoveDirection = moveDir;
+                transform.position += moveDir * shortDistance;
+
+                return false;
+            }
+
+            //Check Y axis movement
             if (!canMoveable)
             {
-                
-                   // Cannot move horizonatally
-                 moveDir = new Vector3(0f, baseMoveDir.y).normalized;
+                // Cannot move horizonatally
+                moveDir = new Vector3(0f, baseMoveDir.y).normalized;
                 canMoveable = moveDir.y != 0f && CanMove(moveDir, distance);
-              
+
             }
+
+            
         }
 
-
+        // Dash mechanics
         if (canMoveable)
         {
             keyboardController.lastMoveDirection = moveDir;
             transform.position += moveDir * distance;
             // Debug.Log("true");
             return true;
-          
-        }
-        else
+    
+        }else 
         {
-            
-            // Debug.Log("false");
+            // y short dash 
+            shortDistance -= 0.2f;
+            keyboardController.lastMoveDirection = moveDir;
+            transform.position += moveDir * shortDistance;
+
             return false;
-           
         }
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+//Debug.Log("before shortdiatnce :"+shortDistance);
+//shortDistance -= 0.2f;
+//keyboardController.lastMoveDirection = moveDir;
+//transform.position += moveDir * shortDistance;
+//Debug.Log("after shortdiatnce :" + shortDistance);
+// Debug.Log("false");
