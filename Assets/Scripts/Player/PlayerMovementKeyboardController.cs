@@ -9,7 +9,7 @@ public class PlayerMovementKeyboardController : MonoBehaviour
     //require components
     private Rigidbody2D rb2d;
     private Vector3 moveDirection;
-    private Vector3 lastMoveDirection ;
+    public Vector3 lastMoveDirection ;
 
     float moveX = 0f;
     float moveY = 0f;
