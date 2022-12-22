@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\Dash\Dash.cs" />
     <Compile Include="Assets\Scripts\Input\MovementJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
@@ -66,8 +67,9 @@
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseSimple.cs" />
     <Compile Include="Assets\Scripts\Enums\Enums.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovementKeyboardController.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\CameraFollow.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Scripts\General\GameHandler.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Joystick\AimMechanicsWithJoystickSimple.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Joystick\AimMechanicsWithJoystickFlipWeapon.cs" />
@@ -77,12 +79,12 @@
     <Compile Include="Assets\Scripts\Player\PlayerFaceDirection.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Joystick\AimMechanicsWithJoystickBase.cs" />
-    <Compile Include="Assets\Scripts\Player\Teleport.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\Teleport.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\AimMechanicsBase.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\Mouse\AimMechanicsWithMouseFlipWeapon.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AngleFromVector.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Aim\CurrentAimDirection.cs" />
-    <Compile Include="Assets\Scripts\GameHandler.cs" />
+    <Compile Include="Assets\Scripts\General\CollisionDetection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
