@@ -6,12 +6,12 @@ public class Teleport : MonoBehaviour
 {
 
     [SerializeField] private float dashDistance = 100f;
-    [SerializeField] private PlayerMovementKeyboardController keyboardController;
+    [SerializeField] private PlayerMovementKeyboardInput keyboardController;
     [SerializeField] private Vector3 moveDirection;
     [SerializeField] private float shortDistance = 0f;
     private void Awake()
     {
-        keyboardController = GetComponent<PlayerMovementKeyboardController>();
+        keyboardController = GetComponent<PlayerMovementKeyboardInput>();
     }
 
     // check obstacle
@@ -66,7 +66,7 @@ public class Teleport : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TryMove(keyboardController.lastMoveDirection, dashDistance);
+            TryMove(keyboardController.moveDirection, dashDistance);
         }
     }
 
@@ -93,7 +93,7 @@ public class Teleport : MonoBehaviour
             if (!canMoveable && baseMoveDir.x != 0 && baseMoveDir.y == 0f)
             {
                 shortDistance -= 0.2f;
-                keyboardController.lastMoveDirection = moveDir;
+                keyboardController.moveDirection = moveDir;
                 transform.position += moveDir * shortDistance;
 
                 return false;
@@ -112,7 +112,7 @@ public class Teleport : MonoBehaviour
         // Dash mechanics
         if (canMoveable)
         {
-            keyboardController.lastMoveDirection = moveDir;
+            keyboardController.moveDirection = moveDir;
             transform.position += moveDir * distance;
             // Debug.Log("true");
             return true;
@@ -121,7 +121,7 @@ public class Teleport : MonoBehaviour
         {
             // y short dash 
             shortDistance -= 0.2f;
-            keyboardController.lastMoveDirection = moveDir;
+            keyboardController.moveDirection = moveDir;
             transform.position += moveDir * shortDistance;
 
             return false;

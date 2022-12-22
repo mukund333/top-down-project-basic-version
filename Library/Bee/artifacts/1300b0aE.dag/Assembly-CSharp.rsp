@@ -344,12 +344,14 @@
 "Assets/Scripts/Mechanics/Aim/Mouse/AimMechanicsWithMouseSimple.cs"
 "Assets/Scripts/Mechanics/AngleFromVector.cs"
 "Assets/Scripts/Mechanics/CameraFollow.cs"
+"Assets/Scripts/Mechanics/Dash/CoolDown.cs"
 "Assets/Scripts/Mechanics/Dash/Dash.cs"
+"Assets/Scripts/Mechanics/Dash/PlayerMovementPhysics.cs"
 "Assets/Scripts/Mechanics/Teleport.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerFaceDirection.cs"
 "Assets/Scripts/Player/PlayerMovementJoystickController.cs"
-"Assets/Scripts/Player/PlayerMovementKeyboardController.cs"
+"Assets/Scripts/Player/PlayerMovementKeyboardInput.cs"
 -langversion:8.0
 
 /deterministic
