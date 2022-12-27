@@ -38,10 +38,10 @@ public class CollisionDetection : MonoBehaviour
 		HorizontalCollisions();
 
 
-		Debug.Log("collision below :" + collisionInfo.below);
-		Debug.Log("collision above :" + collisionInfo.above);
-		Debug.Log("collision left :" + collisionInfo.left);
-		Debug.Log("collision right :" + collisionInfo.right);
+		//Debug.Log("collision below :" + collisionInfo.below);
+		//Debug.Log("collision above :" + collisionInfo.above);
+		//Debug.Log("collision left :" + collisionInfo.left);
+		//Debug.Log("collision right :" + collisionInfo.right);
 
 	}
 

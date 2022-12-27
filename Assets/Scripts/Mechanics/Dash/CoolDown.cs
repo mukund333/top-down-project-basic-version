@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CoolDown : MonoBehaviour
 {
-    [SerializeField] private float cooldownTimer = 0.5f;
+    [HideInInspector]
+    public float cooldownTimer = 0.5f;
     [SerializeField] private float cooldownTime;
     public bool isCool = true;
 
