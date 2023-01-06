@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/PlayerStagging.unity
+- path: Assets/Experimental/scenes/steering behv.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
