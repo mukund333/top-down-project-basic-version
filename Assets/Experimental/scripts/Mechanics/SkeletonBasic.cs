@@ -12,7 +12,7 @@ public class SkeletonBasic : MonoBehaviour
      */
 
     [SerializeField] private SteeringBasics         steeringBasics;
-    [SerializeField] private PlayerMovementPhysics  target;
+    [SerializeField] private PlayerPhysics  target;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
    
@@ -56,7 +56,7 @@ public class SkeletonBasic : MonoBehaviour
     void FixedUpdate()
     {
         
-        distanceFromPlayer = steeringBasics.GetTargetDistance(target.PlayerPosition);
+        distanceFromPlayer = steeringBasics.GetTargetDistance(target.transform.position);
       
         if (distanceFromPlayer > marchingDistance )
         {
@@ -122,7 +122,7 @@ public class SkeletonBasic : MonoBehaviour
 
         steeringBasics.maxVelocity = seekVelocity;
 
-        Vector3 accel = steeringBasics.Seek(target.PlayerPosition);
+        Vector3 accel = steeringBasics.Seek(target.transform.position);
 
         steeringBasics.Steer(accel);
     }
@@ -133,7 +133,7 @@ public class SkeletonBasic : MonoBehaviour
 
         steeringBasics.maxVelocity = chargeVelocity;
 
-        Vector3 accel = steeringBasics.Arrive(target.PlayerPosition);
+        Vector3 accel = steeringBasics.Arrive(target.transform.position);
 
         steeringBasics.Steer(accel);
 

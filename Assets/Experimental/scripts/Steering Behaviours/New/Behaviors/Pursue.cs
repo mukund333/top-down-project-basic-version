@@ -22,10 +22,10 @@ public class Pursue : MonoBehaviour
        
     }
 
-    public Vector3 GetSteering(PlayerMovementPhysics target)
+    public Vector3 GetSteering(PlayerPhysics target)
     {
         /* Calculate the distance to the target */
-        Vector3 displacement = target.PlayerPosition - transform.position;
+        Vector3 displacement = target.transform.position - transform.position;
         float distance = displacement.magnitude;
 
         /* Get the character's speed */
@@ -43,7 +43,7 @@ public class Pursue : MonoBehaviour
         }
 
         /* Put the target together based on where we think the target will be */
-        Vector3 explicitTarget = (Vector2)target.PlayerPosition + target.PlayerVelocity * prediction;
+        Vector3 explicitTarget = (Vector2)target.transform.position + target.PlayerVelocity * prediction;
 
         //Debug.DrawLine(transform.position, explicitTarget);
 

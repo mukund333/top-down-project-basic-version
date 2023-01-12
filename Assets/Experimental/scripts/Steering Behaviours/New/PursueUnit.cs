@@ -6,12 +6,12 @@ public class PursueUnit : MonoBehaviour
 {
    [SerializeField] private SteeringBasics steeringBasics;
    [SerializeField] private Pursue pursue;
-   [SerializeField] private PlayerMovementPhysics target;
+   [SerializeField] private PlayerPhysics target;
 
 
     void Awake()
     {
-        target = GameObject.Find("player").GetComponent<PlayerMovementPhysics>();
+        target = GameObject.Find("player").GetComponent<PlayerPhysics>();
         steeringBasics = GetComponent<SteeringBasics>();
         pursue = GetComponent<Pursue>();
     }

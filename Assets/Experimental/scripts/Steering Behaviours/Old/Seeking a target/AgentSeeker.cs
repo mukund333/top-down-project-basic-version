@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AgentSeeker : MonoBehaviour
 {
-    [SerializeField] float r;
+    //[SerializeField] float r;
     [SerializeField] float maxforce;
     [SerializeField] float maxspeed;
     [SerializeField] float mass;
@@ -27,7 +27,7 @@ public class AgentSeeker : MonoBehaviour
         //maxspeed = 4.0f;
         //maxforce = 1f;
 
-        r = 1.0f;
+        //r = 1.0f;
       //  mass = (4 / 3) * Mathf.PI * (Mathf.Pow(r, 3));
 
         rb2d.mass = mass;

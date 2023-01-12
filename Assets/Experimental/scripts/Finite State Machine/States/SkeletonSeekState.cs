@@ -32,7 +32,7 @@ public class SkeletonSeekState : BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        Vector3 accel = _skeletonSM.steeringBasics.Arrive(_skeletonSM.target.PlayerPosition);
+        Vector3 accel = _skeletonSM.steeringBasics.Arrive(_skeletonSM.target.transform.position);
 
         _skeletonSM.steeringBasics.Steer(accel);
     }

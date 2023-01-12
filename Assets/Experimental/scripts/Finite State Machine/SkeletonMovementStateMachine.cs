@@ -6,12 +6,12 @@ public class SkeletonMovementStateMachine : StateMachine
 {
     public SteeringBasics steeringBasics;
 
-    public PlayerMovementPhysics target;
+    public PlayerPhysics target;
 
     private void Start()
     {
         steeringBasics = GetComponent<SteeringBasics>();
-        target = GameObject.Find("player").GetComponent<PlayerMovementPhysics>();
+        target = GameObject.Find("player").GetComponent<PlayerPhysics>();
     }
 
 
