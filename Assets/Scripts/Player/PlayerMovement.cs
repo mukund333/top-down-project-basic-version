@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        Debug.Log(isDiableInputs);
         if(!isDiableInputs)
         {
             PlayerMovementDirection = keyboardInput.InputDirection;

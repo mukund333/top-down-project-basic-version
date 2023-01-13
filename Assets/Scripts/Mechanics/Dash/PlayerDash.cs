@@ -43,7 +43,7 @@ public class PlayerDash : MonoBehaviour
     {
         if (!isDashing)
         {
-            playerMovement.IsDiableInputs = false;
+           
             lastMovementDirection = keyboardInput.InputDirection;
            
         }

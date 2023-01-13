@@ -369,6 +369,7 @@
 "Assets/Scripts/Player/PlayerFaceDirection.cs"
 "Assets/Scripts/Player/PlayerJoystickController.cs"
 "Assets/Scripts/Player/PlayerKeyboardInput.cs"
+"Assets/Scripts/Player/PlayerKnockback.cs"
 "Assets/Scripts/Player/PlayerMovement.cs"
 -langversion:8.0
 

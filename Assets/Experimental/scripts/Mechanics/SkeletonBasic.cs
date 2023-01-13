@@ -12,7 +12,7 @@ public class SkeletonBasic : MonoBehaviour
      */
 
     [SerializeField] private SteeringBasics         steeringBasics;
-    [SerializeField] private PlayerPhysics  target;
+    [SerializeField] private GameObject  target;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
    
@@ -25,14 +25,19 @@ public class SkeletonBasic : MonoBehaviour
     [SerializeField] private float seekVelocity;
     [SerializeField] private float marchTime;
     [SerializeField] private float recoverTime;
+    [SerializeField] private float attackTime;
 
     float distanceFromPlayer;
     private Rigidbody2D rb2d;
 
    public bool isRecovered;
     bool isMarched;
+    bool isAttacking;
     bool isRecoveringTime;
+
     private Coroutine marchCoroutine;
+    private Coroutine recoveryCoroutine;
+    private Coroutine attackCoroutine;
 
 
 
@@ -41,11 +46,14 @@ public class SkeletonBasic : MonoBehaviour
         steeringBasics = GetComponent<SteeringBasics>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
+        target = GameObject.Find("Player");
+
         isRecovered = true;
         isRecoveringTime = false;
         isMarched = false;
+        isAttacking = false;
 
-       
+
     }
 
     private void Update()
@@ -80,7 +88,7 @@ public class SkeletonBasic : MonoBehaviour
 
             if (!isMarched)
             {
-                marchCoroutine = StartCoroutine(MarchingCoroutine());
+                marchCoroutine = StartCoroutine(MarchingTimeCoroutine());
                 isMarched = true;
             }
 
@@ -88,11 +96,15 @@ public class SkeletonBasic : MonoBehaviour
             spriteRenderer.color = Color.white;
         }
         
-        if (distanceFromPlayer <= 1.3f && isRecovered)
+        if (distanceFromPlayer <= steeringBasics.targetRadius && isRecovered)
         {
             Attacking();
-           
 
+           if(!isAttacking)
+            {
+                attackCoroutine = StartCoroutine(AttackTimeCoroutine());
+                isAttacking = true;
+            }
             spriteRenderer.color = Color.red;
         }
 
@@ -101,16 +113,12 @@ public class SkeletonBasic : MonoBehaviour
             Recovering();
             if(!isRecoveringTime)
             {
-                StartCoroutine(RecoveryCoroutine());
+                recoveryCoroutine = StartCoroutine(RecoveryTimeCoroutine());
                 isRecoveringTime = true;
             }
            
             spriteRenderer.color = Color.yellow;
         }
-
-
-
-
 
     }
 
@@ -129,7 +137,7 @@ public class SkeletonBasic : MonoBehaviour
 
     private void Marching()
     { 
-        Debug.Log("charge");
+       // Debug.Log("charge");
 
         steeringBasics.maxVelocity = chargeVelocity;
 
@@ -143,51 +151,51 @@ public class SkeletonBasic : MonoBehaviour
     private void Attacking()
     {
         //attack animation
-       Debug.Log("Attacking");
+      // Debug.Log("Attacking");
+        rb2d.velocity = Vector2.zero;
     }
 
     private void Recovering()
     {
         //Recover animation 
-        Debug.Log("Recovering");
-
+       // Debug.Log("Recovering");
         rb2d.velocity = Vector2.zero;
     }
     #endregion
 
 
     #region 
-    
-    IEnumerator MarchingCoroutine()
+    IEnumerator MarchingTimeCoroutine()
     {
-        Debug.Log("MarchingCoroutine: " + marchTime);
+        //Debug.Log("MarchingCoroutine: " + marchTime);
         yield return new WaitForSeconds(marchTime);
         isRecovered = false;
         isMarched = false;
 
       
-        StopCoroutine(MarchingCoroutine());
+        StopCoroutine(MarchingTimeCoroutine());
 
     }
 
-    IEnumerator RecoveryCoroutine()
+    IEnumerator RecoveryTimeCoroutine()
     {
 
         yield return new WaitForSeconds(recoverTime);
         isRecovered = true;
         isRecoveringTime = false;
 
-        StopCoroutine(RecoveryCoroutine());
+        StopCoroutine(RecoveryTimeCoroutine());
 
     }
 
-    IEnumerator AttackCoroutine()
+    IEnumerator AttackTimeCoroutine()
     {
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(attackTime);
         isRecovered = false;
+        isAttacking = false;
 
-        StopCoroutine(AttackCoroutine());
+        StopCoroutine(AttackTimeCoroutine());
 
     }
 

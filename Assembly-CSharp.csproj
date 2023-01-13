@@ -63,6 +63,7 @@
     <Compile Include="Assets\Experimental\scripts\Finite State Machine\States\IdleState.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\General\CollisionDetection.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerKnockback.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Experimental\scripts\Steering Behaviours\New\ArriveUnit.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
