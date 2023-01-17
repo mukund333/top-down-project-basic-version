@@ -43,15 +43,17 @@ public class PlayerMovement : MonoBehaviour
         keyboardInput = GetComponent<PlayerKeyboardInput>();
         playerPhysics = GetComponent<PlayerPhysics>();
        
-
         PlayerMovementDirection = Vector3.zero;
        
     }
+
+   
 
     private void Update()
     {
 
         Debug.Log(isDiableInputs);
+
         if(!isDiableInputs)
         {
             PlayerMovementDirection = keyboardInput.InputDirection;
@@ -68,10 +70,5 @@ public class PlayerMovement : MonoBehaviour
         playerPhysics.Direction = direction;
         playerPhysics.Speed = speed;
     }
-
-
-
-
-
 
 }

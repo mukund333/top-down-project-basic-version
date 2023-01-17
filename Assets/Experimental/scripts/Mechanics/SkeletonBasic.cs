@@ -23,9 +23,9 @@ public class SkeletonBasic : MonoBehaviour
     [SerializeField] private float marchingDistance;
     [SerializeField] private float chargeVelocity;
     [SerializeField] private float seekVelocity;
-    [SerializeField] private float marchTime;
-    [SerializeField] private float recoverTime;
-    [SerializeField] private float attackTime;
+    [SerializeField] private float marchTimeDuration;
+    [SerializeField] private float recoverTimeDuration;
+    [SerializeField] private float attackTimeDuration;
 
     float distanceFromPlayer;
     private Rigidbody2D rb2d;
@@ -168,7 +168,7 @@ public class SkeletonBasic : MonoBehaviour
     IEnumerator MarchingTimeCoroutine()
     {
         //Debug.Log("MarchingCoroutine: " + marchTime);
-        yield return new WaitForSeconds(marchTime);
+        yield return new WaitForSeconds(marchTimeDuration);
         isRecovered = false;
         isMarched = false;
 
@@ -180,7 +180,7 @@ public class SkeletonBasic : MonoBehaviour
     IEnumerator RecoveryTimeCoroutine()
     {
 
-        yield return new WaitForSeconds(recoverTime);
+        yield return new WaitForSeconds(recoverTimeDuration);
         isRecovered = true;
         isRecoveringTime = false;
 
@@ -191,7 +191,7 @@ public class SkeletonBasic : MonoBehaviour
     IEnumerator AttackTimeCoroutine()
     {
 
-        yield return new WaitForSeconds(attackTime);
+        yield return new WaitForSeconds(attackTimeDuration);
         isRecovered = false;
         isAttacking = false;
 

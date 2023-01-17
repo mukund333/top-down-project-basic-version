@@ -4,20 +4,44 @@ using UnityEngine;
 
 public class PlayerKeyboardInput : MonoBehaviour
 {
-    private Vector3 inputDirection;
-
-    public Vector3 InputDirection
+    [SerializeField] private Vector3 _inputDirection;
+    [SerializeField] private Vector3 _lastInputDirection;
+    [SerializeField] private bool _isDisableInput;
+    public  Vector3 InputDirection
     {
-        get { return inputDirection; }
-        set { inputDirection = value; } 
+        get { return _inputDirection; }
+        set { _inputDirection = value; } 
+    }
+    public Vector3 LastInputDirection
+    {
+        get { return _lastInputDirection; }
+       
+    }
+
+    public bool IsDisableInput
+    {
+        get { return _isDisableInput; }
+        set { _isDisableInput = value; }
     }
 
     private float moveX = 0f;
     private float moveY = 0f;
 
+
+    private void Start()
+    {
+        _lastInputDirection = InputDirection;
+        _isDisableInput = false;
+    }
+
     private void Update()
     {
-        HandleMovementInput();
+
+        _lastInputDirection = InputDirection;
+
+        if (!_isDisableInput)
+            HandleMovementInput();
+
     }
 
     private void HandleMovementInput()
@@ -46,7 +70,7 @@ public class PlayerKeyboardInput : MonoBehaviour
         }
 
 
-        inputDirection = new Vector3(moveX, moveY).normalized;
+        _inputDirection = new Vector3(moveX, moveY).normalized;
 
     }
 }

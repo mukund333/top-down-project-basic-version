@@ -31,7 +31,7 @@ public class PlayerKnockback : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("enemy trigger");
+           // Debug.Log("enemy trigger");
            // Debug.Log(collision.gameObject.name);
             isknockback = true;
             knockbackDirection = (collision.transform.position - transform.position).normalized;
