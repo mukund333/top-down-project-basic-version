@@ -4,28 +4,27 @@ using UnityEngine;
 
 public  class PlayerStateMachine : StateMachine
 {
+    //States 
     public IdleStatePlayer idleState;
-
     public MovingStatePlayer movingState;
-
-    public DashStatePlayer dashStatePlayer;
-
     public KnockbackStatePlayer knockbackState;
+    public DashStatePlayer dashState;
 
+
+    //Required components
     public PlayerKeyboardInput keyboardInput;
-
     public PlayerPhysics playerPhysics;
-
     public PlayerCollisionInfo playerCollisionInfo;
 
     private void Awake()
     {
+        //States initialization
         idleState = new IdleStatePlayer(this);
         movingState = new MovingStatePlayer(this);
-        dashStatePlayer = new DashStatePlayer(this);
+        dashState = new DashStatePlayer(this);
         knockbackState = new KnockbackStatePlayer(this);
 
-
+        //Required components
         keyboardInput = GetComponent<PlayerKeyboardInput>();
         playerPhysics = GetComponent<PlayerPhysics>();
         playerCollisionInfo = GetComponent<PlayerCollisionInfo>();

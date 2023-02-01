@@ -5,7 +5,6 @@ using UnityEngine;
 public class ArriveUnit : MonoBehaviour
 {
    
-
     SteeringBasics steeringBasics;
 
     [SerializeField] private PlayerPhysics target;

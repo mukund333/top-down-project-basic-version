@@ -11,8 +11,8 @@ public class SkeletonBasic : MonoBehaviour
      
      */
 
-    [SerializeField] private SteeringBasics         steeringBasics;
-    [SerializeField] private GameObject  target;
+    [SerializeField] private SteeringBasics steeringBasics;
+    [SerializeField] private GameObject     target;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
    
@@ -99,11 +99,12 @@ public class SkeletonBasic : MonoBehaviour
         if (distanceFromPlayer <= steeringBasics.targetRadius && isRecovered)
         {
             Attacking();
-
+            isMarched = false;
            if(!isAttacking)
             {
                 attackCoroutine = StartCoroutine(AttackTimeCoroutine());
                 isAttacking = true;
+                
             }
             spriteRenderer.color = Color.red;
         }
@@ -137,7 +138,7 @@ public class SkeletonBasic : MonoBehaviour
 
     private void Marching()
     { 
-       // Debug.Log("charge");
+        Debug.Log("charge");
 
         steeringBasics.maxVelocity = chargeVelocity;
 
@@ -151,14 +152,14 @@ public class SkeletonBasic : MonoBehaviour
     private void Attacking()
     {
         //attack animation
-      // Debug.Log("Attacking");
+       Debug.Log("Attacking");
         rb2d.velocity = Vector2.zero;
     }
 
     private void Recovering()
     {
         //Recover animation 
-       // Debug.Log("Recovering");
+        Debug.Log("Recovering");
         rb2d.velocity = Vector2.zero;
     }
     #endregion
@@ -169,7 +170,13 @@ public class SkeletonBasic : MonoBehaviour
     {
         //Debug.Log("MarchingCoroutine: " + marchTime);
         yield return new WaitForSeconds(marchTimeDuration);
-        isRecovered = false;
+
+        if(!isAttacking)
+        {
+            isRecovered = false;
+        }
+           
+
         isMarched = false;
 
       

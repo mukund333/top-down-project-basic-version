@@ -49,7 +49,7 @@ public class MovingStatePlayer : BaseState
         {
             
             _stateMachine.keyboardInput.IsDisableInput = true;
-            stateMachine.ChangeState(_stateMachine.dashStatePlayer);
+            stateMachine.ChangeState(_stateMachine.dashState);
         }
 
         if (_stateMachine.playerCollisionInfo.IsEnemyCollided)

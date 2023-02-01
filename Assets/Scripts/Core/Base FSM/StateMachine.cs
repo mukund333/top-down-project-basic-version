@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
 
-    BaseState currentState;
+   protected BaseState currentState;
 
     void Start()
     {
@@ -13,11 +13,10 @@ public class StateMachine : MonoBehaviour
         if (currentState != null)
             currentState.Enter();
     }
-
-    void Update()
+    
+   private void Update()
     {
-
-        Debug.Log(currentState);
+        //Debug.Log(currentState);
 
         if (currentState != null)
         {
@@ -51,12 +50,13 @@ public class StateMachine : MonoBehaviour
     }
 
    
-    private void OnGUI()
-    {
-        string content = currentState != null ? currentState.name : "(no current state)";
 
-        GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
+    //private void OnGUI()
+    //{
+    //    string content = currentState != null ? currentState.name : "(no current state)";
 
-    }
+    //    GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
+
+    //}
 
 }
