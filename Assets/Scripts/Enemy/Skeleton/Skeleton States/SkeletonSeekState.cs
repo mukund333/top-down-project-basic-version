@@ -10,11 +10,7 @@ public class SkeletonSeekState : BaseState
 
     private float maxSeekAcceleration;
 
-
     private float chargeDistance;
-
-    
-    
 
     public SkeletonSeekState(StateMachineSkeleton stateMachine) : base("Seeking", stateMachine)
     {
@@ -49,7 +45,6 @@ public class SkeletonSeekState : BaseState
         }
     }
 
-
     private void Seeking()
     {
         _stateMachine.steeringBehaviorsCore.MaxSteeringVelocity = seekVelocity;
@@ -59,6 +54,5 @@ public class SkeletonSeekState : BaseState
        _stateMachine.steeringBehaviorsCore.Steer(accel);
 
     }
-
 
 }

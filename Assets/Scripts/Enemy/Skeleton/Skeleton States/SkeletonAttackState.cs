@@ -6,7 +6,6 @@ public class SkeletonAttackState : BaseState
 {
     private StateMachineSkeleton _stateMachine;
 
-   
     private IEnumerator attackCoroutine;
 
     [SerializeField] private bool isTimerStarted;
@@ -17,8 +16,6 @@ public class SkeletonAttackState : BaseState
     private bool isAttacking;
 
     [SerializeField] private int health=100;
-
-
 
     public SkeletonAttackState(StateMachineSkeleton stateMachine) : base("Attacking", stateMachine)
     {
@@ -59,7 +56,6 @@ public class SkeletonAttackState : BaseState
                 //change State
                 stateMachine.ChangeState(_stateMachine.recovery_Skeleton);
 
-
             }
         }
 
@@ -90,8 +86,6 @@ public class SkeletonAttackState : BaseState
         //}
 
     }
-
-
 
     //IEnumerator WaitingTimer()
     //{
@@ -160,6 +154,5 @@ public class SkeletonAttackState : BaseState
 
     //    yield break;
     //}
-
 
 }
