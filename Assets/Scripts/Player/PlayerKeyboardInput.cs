@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerKeyboardInput : MonoBehaviour
 {
-    [SerializeField] private Vector3 _inputDirection;
+        [SerializeField] private Vector3 _inputDirection;
     [SerializeField] private Vector3 _lastInputDirection;
     [SerializeField] private bool _isDisableInput;
     public  Vector3 InputDirection
