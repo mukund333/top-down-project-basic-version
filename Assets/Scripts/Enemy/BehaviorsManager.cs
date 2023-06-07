@@ -168,7 +168,7 @@ public class BehaviorsManager : MonoBehaviour
             case State.Flee:
 
                 if (dist > fleeRange)
-                    currentState = State.Strafe;
+                    currentState = State.Seek;
 
 
 

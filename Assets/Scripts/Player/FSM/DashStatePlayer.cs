@@ -33,11 +33,16 @@ public class DashStatePlayer : BaseState
     public override void Enter()
     {
         base.Enter();
+
+
+       // _stateMachine.colliderController.collider2D.enabled = false;
+
         dashTime = 0.0f;
         
         isDashing = true;
 
         lastMovementDirection = _stateMachine.keyboardInput.LastInputDirection;
+
 
         if (CheckDiagoanlMovement())
         {
@@ -49,8 +54,8 @@ public class DashStatePlayer : BaseState
             dashTimeDuration = 0.12f;
             checkObstacle = false;
         }
-        
 
+      
 
     }
 
@@ -79,6 +84,9 @@ public class DashStatePlayer : BaseState
             dashTime += Time.deltaTime;
             if (dashTime > dashTimeDuration)
             {
+
+              
+
                 isDashing = false;
                 dashTime = 0.0f;
                 stateMachine.ChangeState(_stateMachine.movingState);

@@ -22,7 +22,8 @@ public class MovingStatePlayer : BaseState
         normalSpeed = 400f;
         
         _stateMachine.keyboardInput.IsDisableInput = false;
-       
+       // _stateMachine.colliderController.collider2D.enabled = true;
+
     }
 
     public override void UpdateLogic()
@@ -49,6 +50,8 @@ public class MovingStatePlayer : BaseState
         {
             
             _stateMachine.keyboardInput.IsDisableInput = true;
+          //  _stateMachine.colliderController.collider2D.enabled = false;
+
             stateMachine.ChangeState(_stateMachine.dashState);
         }
 

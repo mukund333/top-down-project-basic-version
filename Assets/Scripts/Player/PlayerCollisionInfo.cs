@@ -10,7 +10,17 @@ public class PlayerCollisionInfo : MonoBehaviour
 
     public Vector3 CollisionDirection { get { return collisionDirection; } }
 
+
+    private CircleCollider2D collider2D;
+
+    private void Start()
+    {
+        collider2D = GetComponent<CircleCollider2D>();
+    }
+
+
    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

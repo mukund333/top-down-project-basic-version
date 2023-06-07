@@ -6,6 +6,7 @@ public class AimMechanicsWithMouseFlipWeapon : AimMechanicsWithMouseBase
 {
     [SerializeField] private CurrentAimDirection currentAimDirection;
     [SerializeField] private FlipWeaponTransform flipWeaponTransform;
+    public float weaponAngleDegrees;
 
 
    protected override void Awake()
@@ -21,7 +22,7 @@ public class AimMechanicsWithMouseFlipWeapon : AimMechanicsWithMouseBase
     {
         Vector3 weaponDirection = GetWeaponDirection();
 
-        float weaponAngleDegrees = GetAngleFromVector(weaponDirection);
+         weaponAngleDegrees = GetAngleFromVector(weaponDirection);
 
         currentAimDirection.SetAimDirection(weaponAngleDegrees);
 

@@ -30,8 +30,9 @@ public class KnockbackStatePlayer : BaseState
         knockbackTimeDuration = 0.2f;
         isknockback = true;
         knockbackForce = 500f;
-        
 
+
+        
       
     }
 
@@ -46,6 +47,7 @@ public class KnockbackStatePlayer : BaseState
             if (knockbackTime > knockbackTimeDuration)
             {
                 isknockback = false;
+
                 _stateMachine.keyboardInput.IsDisableInput = false;
                 knockbackTime = 0.0f;
                 stateMachine.ChangeState(_stateMachine.idleState);

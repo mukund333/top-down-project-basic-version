@@ -11,7 +11,7 @@ public class PlayerPhysics : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb2d;
 
-    [SerializeField] private Vector2 playerVelocity;
+    [SerializeField] private Vector2 getPlayerVelocity;
     [SerializeField] private Vector3 direction;
 
     [SerializeField] private GameObject collideGameObject;
@@ -29,9 +29,9 @@ public class PlayerPhysics : MonoBehaviour
         get { return direction; }
         set { direction = value; }
     }
-    public Vector2 PlayerVelocity
+    public Vector2 GetPlayerVelocity
     {
-        get { return playerVelocity; }
+        get { return getPlayerVelocity; }
         
     }
     
@@ -46,7 +46,7 @@ public class PlayerPhysics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerVelocity = rb2d.velocity;
+        getPlayerVelocity = rb2d.velocity;
         rb2d.velocity = direction * speed * Time.fixedDeltaTime;
     }
 

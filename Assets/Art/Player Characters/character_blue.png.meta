@@ -87,7 +87,7 @@ TextureImporter:
       213: 7165553853720036328
     second: character_blue_27
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -108,6 +108,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -146,6 +147,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -193,6 +195,18 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -796,6 +810,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      character_blue_0: 1396108450124910727
+      character_blue_1: -1637631485365009828
+      character_blue_10: -2818752749623776667
+      character_blue_11: 558320528822559438
+      character_blue_12: 66113878248725297
+      character_blue_13: -3311537529506984058
+      character_blue_14: 4095457762968311622
+      character_blue_15: -3045262257662671645
+      character_blue_16: 5149696863633943609
+      character_blue_17: 5699439860905865995
+      character_blue_18: -1650804523771829125
+      character_blue_19: -7065988907412960379
+      character_blue_2: -3281933957037195268
+      character_blue_20: 4290589404474750663
+      character_blue_21: -2200408064572438438
+      character_blue_22: 8344129169664322169
+      character_blue_23: -6567665103333608320
+      character_blue_24: 5662263854885401431
+      character_blue_25: -5301514800967649047
+      character_blue_26: 1501873043565713958
+      character_blue_27: 7165553853720036328
+      character_blue_3: -137798067725691703
+      character_blue_4: -4120625876055647950
+      character_blue_5: -3037053904774203756
+      character_blue_6: -7169370154427509987
+      character_blue_7: 5591509293719208620
+      character_blue_8: 6851754306853714006
+      character_blue_9: -5329871080220122784
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

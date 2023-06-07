@@ -5,29 +5,35 @@ using UnityEngine;
 public  class PlayerStateMachine : StateMachine
 {
     //States 
-    public IdleStatePlayer idleState;
-    public MovingStatePlayer movingState;
+    public IdleStatePlayer      idleState;
+    public MovingStatePlayer    movingState;
     public KnockbackStatePlayer knockbackState;
-    public DashStatePlayer dashState;
+    public DashStatePlayer      dashState;
 
 
     //Required components
-    public PlayerKeyboardInput keyboardInput;
-    public PlayerPhysics playerPhysics;
-    public PlayerCollisionInfo playerCollisionInfo;
+    public PlayerKeyboardInput  keyboardInput;
+    public PlayerPhysics        playerPhysics;
+    public PlayerCollisionInfo  playerCollisionInfo;
+    public ColliderController colliderController;
+
+    public ImmortalityStatePlayer immortalityStatePlayer;
+
 
     private void Awake()
     {
         //States initialization
-        idleState = new IdleStatePlayer(this);
-        movingState = new MovingStatePlayer(this);
-        dashState = new DashStatePlayer(this);
-        knockbackState = new KnockbackStatePlayer(this);
+        idleState       = new IdleStatePlayer(this);
+        movingState     = new MovingStatePlayer(this);
+        dashState       = new DashStatePlayer(this);
+        knockbackState  = new KnockbackStatePlayer(this);
 
         //Required components
-        keyboardInput = GetComponent<PlayerKeyboardInput>();
-        playerPhysics = GetComponent<PlayerPhysics>();
+        keyboardInput       = GetComponent<PlayerKeyboardInput>();
+        playerPhysics       = GetComponent<PlayerPhysics>();
         playerCollisionInfo = GetComponent<PlayerCollisionInfo>();
+        immortalityStatePlayer = GetComponent<ImmortalityStatePlayer>();
+        colliderController = GetComponent<ColliderController>();
       
 
     }
@@ -36,5 +42,14 @@ public  class PlayerStateMachine : StateMachine
     {
         return idleState;
     }
+
+    public BaseState GetCurrentState()
+    {
+     
+        return currentState;
+    
+    }
+
+
 
 }
